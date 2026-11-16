@@ -1,0 +1,50 @@
+[Unit]
+Description=Xbox → Steam (painel em http://127.0.0.1:8787)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=xboxsteam
+Group=xboxsteam
+Environment=XSP_CONFIG_DIR=/var/lib/xbox-steam-presence
+WorkingDirectory=/opt/xbox-steam-presence
+ExecStart=/usr/bin/node /opt/xbox-steam-presence/dist/src/index.js
+Restart=on-failure
+RestartSec=10
+# 78 = erro de configuração (ex.: permissão de arquivo): não reinicia à toa
+RestartPreventExitStatus=78
+UMask=0077
+
+# --- Isolamento ---
+StateDirectory=xbox-steam-presence
+StateDirectoryMode=0700
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+PrivateUsers=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+ProtectHostname=yes
+ProtectProc=invisible
+ProcSubset=pid
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+RemoveIPC=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallFilter=~@privileged @resources
+MemoryMax=256M
+
+[Install]
+WantedBy=multi-user.target

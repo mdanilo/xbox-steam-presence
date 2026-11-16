@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Xbox → Steam
+Comment=Painel para ligar e desligar o jogo do Xbox no status da Steam
+Exec=xdg-open http://127.0.0.1:8787
+Icon=input-gaming
+Terminal=false
+Categories=Utility;
+Keywords=xbox;steam;status;

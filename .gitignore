@@ -1,0 +1,8 @@
+node_modules/
+dist/
+# segredos: nunca versionar
+*.env
+!config.env.example
+*.save
+steam-refresh-token
+steam-data/
