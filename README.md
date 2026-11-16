@@ -32,9 +32,9 @@ Open **http://127.0.0.1:8787** (or **Xbox → Steam** in your app menu):
 
 | | |
 |---|---|
-| ⚫ **Desligado** | Off: no polling, disconnected from Steam |
-| 🟢 **Ligado** | On until you turn it off or reboot |
-| 🔵 **Sempre ligado** | Always on, even after a reboot |
+| ⚫ **OFF** | Off: no polling, disconnected from Steam |
+| 🟢 **ON** | On until you turn it off or reboot |
+| 🔵 **ALWAYS** | Always on, even after a reboot |
 
 ## Update · Uninstall
 
